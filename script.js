@@ -1,21 +1,22 @@
-/* =====================
-   EFEK MENGETIK
-===================== */
+/* =========================
+   TEKS MENGETIK
+========================= */
 
 const tulisan =
 "Terima kasih sudah hadir di hidup Intan... ❤️";
 
-let i = 0;
+let angka = 0;
+
 
 function ketik() {
 
-    if (i < tulisan.length) {
+    if (angka < tulisan.length) {
 
         document.getElementById(
             "typing"
-        ).innerHTML += tulisan[i];
+        ).textContent += tulisan[angka];
 
-        i++;
+        angka++;
 
         setTimeout(
             ketik,
@@ -26,15 +27,16 @@ function ketik() {
 
 }
 
+
 ketik();
 
 
 
-/* =====================
+/* =========================
    LOVE MELAYANG
-===================== */
+========================= */
 
-const hearts =
+const tempatLove =
 document.getElementById("hearts");
 
 
@@ -46,39 +48,45 @@ function buatLove() {
     love.className =
     "heart";
 
-    const pilihan = [
+
+    const pilihanLove = [
         "❤️",
         "💕",
         "💗",
         "💖",
-        "💘"
+        "💘",
+        "💞"
     ];
 
+
     love.innerHTML =
-        pilihan[
+        pilihanLove[
             Math.floor(
                 Math.random()
-                * pilihan.length
+                * pilihanLove.length
             )
         ];
+
 
     love.style.left =
         Math.random() * 100 + "%";
 
+
     love.style.fontSize =
         Math.random() * 18 + 15 + "px";
+
 
     love.style.animationDuration =
         Math.random() * 4 + 5 + "s";
 
-    hearts.appendChild(love);
+
+    tempatLove.appendChild(love);
 
 
-    setTimeout(() => {
-
-        love.remove();
-
-    }, 9000);
+    setTimeout(
+        () => love.remove(),
+        9000
+    );
 
 }
 
@@ -90,11 +98,11 @@ setInterval(
 
 
 
-/* =====================
-   BUKA SURAT
-===================== */
+/* =========================
+   TOMBOL BUKA PESAN
+========================= */
 
-function bukaWebsite() {
+function bukaPesan() {
 
     document
         .getElementById("surat")
@@ -106,9 +114,9 @@ function bukaWebsite() {
 
 
 
-/* =====================
+/* =========================
    JAWABAN
-===================== */
+========================= */
 
 function jawab() {
 
@@ -116,6 +124,9 @@ function jawab() {
         .getElementById("jawaban")
         .innerHTML =
         "🥹❤️ Terima kasih sudah memilih untuk tetap di sini. Semoga cerita kita selalu punya alasan untuk terus dilanjutkan. Intan sayang kamu. ❤️";
+
+
+    // Love tambahan
 
     for (
         let i = 0;
